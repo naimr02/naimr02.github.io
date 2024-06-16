@@ -1,0 +1,135 @@
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded and parsed");
+    document.getElementById('new-task-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log("Form submitted");
+        addTask();
+    });
+
+    // Light/Dark mode switch
+    const modeSwitch = document.getElementById('mode-switch');
+    modeSwitch.addEventListener('change', toggleMode);
+    loadModeFromStorage();
+
+    loadTasksFromStorage();
+    displayTasks();
+});
+
+let tasks = [];
+
+function addTask() {
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const dueDate = document.getElementById('due-date').value;
+    const priority = document.getElementById('priority').value;
+
+    console.log("Adding task:", title, description, dueDate, priority);
+
+    const task = {
+        id: Date.now(),
+        title,
+        description,
+        dueDate,
+        priority,
+        completed: false
+    };
+
+    tasks.push(task);
+    saveTasksToStorage();
+    displayTasks();
+    clearForm();
+}
+
+function clearForm() {
+    document.getElementById('new-task-form').reset();
+}
+
+function displayTasks(filter = 'all') {
+    console.log("Displaying tasks with filter:", filter);
+    const taskList = document.getElementById('tasks');
+    taskList.innerHTML = '';
+
+    let filteredTasks = tasks;
+    if (filter === 'completed') {
+        filteredTasks = tasks.filter(task => task.completed);
+    } else if (filter === 'pending') {
+        filteredTasks = tasks.filter(task => !task.completed);
+    } else if (['low', 'medium', 'high'].includes(filter)) {
+        filteredTasks = tasks.filter(task => task.priority === filter);
+    }
+
+    filteredTasks.forEach(task => {
+        const taskItem = document.createElement('li');
+        if (task.completed) {
+            taskItem.classList.add('completed');
+        }
+        taskItem.innerHTML = `
+            <h3>${task.title}</h3>
+            <p>${task.description}</p>
+            <p>Due: ${task.dueDate}</p>
+            <p>Priority: ${task.priority}</p>
+            <button onclick="toggleComplete(${task.id})">${task.completed ? 'Mark as Pending' : 'Mark as Completed'}</button>
+            <button onclick="editTask(${task.id})">Edit</button>
+            <button onclick="deleteTask(${task.id})">Delete</button>
+        `;
+        taskList.appendChild(taskItem);
+    });
+}
+
+function toggleComplete(id) {
+    const task = tasks.find(task => task.id === id);
+    task.completed = !task.completed;
+    saveTasksToStorage();
+    displayTasks();
+}
+
+function editTask(id) {
+    const task = tasks.find(task => task.id === id);
+    document.getElementById('title').value = task.title;
+    document.getElementById('description').value = task.description;
+    document.getElementById('due-date').value = task.dueDate;
+    document.getElementById('priority').value = task.priority;
+    
+    deleteTask(id);
+}
+
+function deleteTask(id) {
+    tasks = tasks.filter(task => task.id !== id);
+    saveTasksToStorage();
+    displayTasks();
+}
+
+function filterTasks(filter) {
+    displayTasks(filter);
+}
+
+function saveTasksToStorage() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasksFromStorage() {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+        tasks = JSON.parse(storedTasks);
+    }
+    console.log("Loaded tasks from storage:", tasks);
+}
+
+// Light/Dark Mode Toggle Functions
+function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+    saveModeToStorage();
+}
+
+function saveModeToStorage() {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+function loadModeFromStorage() {
+    const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        document.getElementById('mode-switch').checked = true;
+    }
+}

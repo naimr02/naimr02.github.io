@@ -1,293 +1,69 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Naim Rahman-Material Design 3</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap');
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Add the following link element to import the Google Fonts stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
 </head>
-
 <body>
-	<!--Navbar-->
-	<div>
-		<ul>
-			<b>
-				<li><a href="#home">🏠 Home</a></li>
-				<li><a href="#resume">📄 Resume</a></li>
-				<li><a href="#timetable">📅 Timetable</a></li>
-				<li><a href="#gallery">🖼️ Galleries</a></li>
-				<li><a href="#download">⬇️ Download</a></li>
-				<li><a href="#links">🔗 Links</a></li>
-				<li><a href="#disclaimer">📣 Disclaimer</a></li>
-				<li style="float:right">
-					<a id="myBtn">Login/Signup</a>
-				</li>
-			</b>
-		</ul>
-	</div>
-	<br><br>
-	<div class="box"
-		style="background-image: url('img/topbox.jpg'); background-size: cover; background-blend-mode: multiply; background-color: #28292a95;"
-		id="home">
-		<h1>About me</h1>
-		<img style="border-radius: 50%;" src="img/dp.jpg" alt="Naim Rahman">
-		<h2>I'm <span class="highlight">Naim Abdul Rahman</span>!</h2>
-		<p>I am a student from Universiti Teknologi Mara Shah Alam, majoring in Netcentric Computing 🎓💻</p>
-	</div>
-
-
-	<div class="box" id="resume">
-		<h1>Resume</h1>
-		<table style="width:100%">
-			<tr>
-				<th style="border-top-left-radius: 30px; width:30%">Name</th>
-				<td style=" border-top-right-radius: 30px;">Naim bin Abdul Rahman</td><br>
-			</tr>
-			<tr>
-				<th>Email</th>
-				<td>naimrahman2602@gmail.com</td><br>
-			</tr>
-			<tr>
-				<th>Education</th>
-				<td>
-					<ol>
-						<li>SPM at SMK Seksyen 10 Kota Damansara</li><br>
-						<li>Matriculation at Kolej Matrikulasi Selangor</li><br>
-						<li>Bachelor of Science Computer Netcentric Computing at <br>UiTM Shah Alam</li>
-					</ol>
-					<br><br>
-				</td>
-			</tr>
-			<tr>
-				<th style="border-bottom-left-radius: 30px;">Experience</th>
-				<td style="border-bottom-right-radius: 30px;">
-					<ol>
-						<li>C++, Javascript, HTML, CSS</li><br>
-						<li>Canva</li><br>
-						<li>Capcut</li><br>
-					</ol>
-				</td>
-			</tr>
-
-		</table>
-	</div>
-
-	<div class="box" id="timetable">
-		<h2>Timetable</h2>
-		<table>
-			<tr>
-				<th style="border-top-left-radius: 30px;">DAY/TIME</th>
-				<th>8.00-10.00</th>
-				<th>10.00-12.00</th>
-				<th>2.00-4.00</th>
-				<th style="border-top-right-radius: 30px;">4.00-6.00</th>
-			</tr>
-			<tr>
-				<th>Monday</td>
-				<td></td>
-				<td><a href="course.html#ICT450">ICT450</a></td>
-				<td></td>
-				<td><a href="course.html#MAT421">MAT421</a></td>
-			</tr>
-			<tr>
-				<th>Tuesday</td>
-				<td><a href="course.html#CSC574">CSC574</a></td>
-				<td><a href="course.html#CSC520">CSC520</a></td>
-				<td></td>
-				<td><a href="course.html#ICT450">ICT450</a></td>
-			</tr>
-			<tr>
-				<th>Wednesday</td>
-				<td><a href="course.html#CSC574">CSC574</a></td>
-				<td><a href="course.html#CSC404">CSC404</a></td>
-				<td><a href="course.html#CSC520">CSC520</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<th>Thursday</td>
-				<td><a href="course.html#MAT421">MAT421</a></td>
-				<td></td>
-				<td><a href="course.html#STA416">STA416</a></td>
-				<td></td>
-			</tr>
-			<tr style="border-bottom: none;">
-				<th style="border-bottom-left-radius: 30px;">Friday</td>
-				<td><a href="course.html#CSC404">CSC404</a></td>
-				<td><a href="course.html#STA416">STA416</a></td>
-				<td></td>
-				<td style="border-bottom-right-radius: 30px;"></td>
-			</tr>
-		</table>
-		<p>* As of 30 April 2023</p>
-	</div>
-
-	<div class="boxsu" id="gallery">
-		<h1>Galleries </h1>
-		<h5>...of my favourite Caracal(s)</h5>
-		<div class="gallery">
-			<div class="image"><img src="img/gallery/flop2.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop1.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop3.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop4.png" alt=""></div>
-			<div class="image"><img src="img/gallery/flop5.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop6.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop7.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop8.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop9.jpg" alt=""></div>
-			<div class="image"><img src="img/gallery/flop10.jpg" alt=""></div>
-			<video width="30%" controls>
-				<source src="img/gallery/vid1.mp4">
-			</video>
-			<video width="30%" controls>
-				<source src="img/gallery/vid2.mp4">
-			</video>
-			<video width="30%" controls>
-				<source src="img/gallery/vid3.mp4">
-			</video>
-			<video width="30%" controls>
-				<source src="img/gallery/vid4.mp4">
-			</video>
-			<video width="30%" controls>
-				<source src="img/gallery/vid5.mp4">
-			</video>
-		</div>
-		<div style="align-items: center; justify-content: center; display: flex; flex-wrap: wrap;">
-			<audio controls>
-				<source src="img/gallery/audio1.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls>
-				<source src="img/gallery/audio2.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls>
-				<source src="img/gallery/audio3.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls>
-				<source src="img/gallery/audio4.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls>
-				<source src="img/gallery/audio5.mp3" type="audio/mpeg">
-			</audio>
-		</div>
-
-		<p>I love Floppa please don't judge me...</p>
-	</div>
-
-	<div class="box" id="download">
-		<h1>Download</h1>
-		<br><br>
-		<a href="/files/resume.pdf" download class="button">Resume</a><br>
-		<a href="/files/timetable.pdf" download class="button">Timetable</a>
-	</div>
-
-	<div class="box" id="links">
-		<h1>Links</h1>
-		<a href="http://www.quickmeme.com/img/09/095adb208f3c72a2ad1ef58c35d2a79f29bef5c6866903a4b5fa40a519095820.jpg"
-			class="fa fa-facebook"></a><br>
-		<a href="https://www.linkedin.com/in/naim-abdul-rahman-453220247/" class="fa fa-linkedin"></a><br>
-		<a href="https://www.youtube.com/channel/UCx97a1lxSoc-DPiirxqQqRQ" class="fa fa-youtube"></a><br>
-		<a href="https://github.com/naimr02" class="fa fa-github"></a><br>
-		<a href="https://istudent.uitm.edu.my/" class="circle-button"><img src="img/uitm.jpg" alt="UITM logo"></a><br>
-		<a href="https://ufuture.uitm.edu.my/" class="circle-button"><img src="img/ufuture.png" alt="UITM logo"></a>
-	</div>
-
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<span class="close">&times;</span>
-				<h2>Login</h2>
-			</div>
-			<div class="modal-body">
-				<br>
-				<form>
-					<label for="userid">User ID</label><br><br>
-					<input type="text" class="input-res" id="userid" name="userid"><br><br>
-					<label for="password">Password</label><br><br>
-					<input type="password" class="input-res" id="password" name="password"><br><br>
-					<input type="submit" value="Submit" class="button" onclick="alert('Logged in successfully!')">
-					<input type="reset" value="Reset" class="button">
-				</form>
-				<br>
-				<a href="signup.html" class="button">Not registered yet?</a> <br><br>
-			</div>
-		</div>
-	</div>
-
-	<div id="disclaimer" class="box">
-		<h1>Disclaimer</h1>
-		<p style="text-align: center; padding: 0 20px;">
-			The information contained on this portfolio website is for general purposes only. The content provided is
-			based on personal experiences, opinions, and expertise. While every effort has been made to ensure the
-			accuracy and reliability of the information presented, I make no representations or warranties of any kind,
-			express or implied, about the completeness, accuracy, reliability, suitability, or availability of the
-			website or the information, products, services, or related graphics contained on the website for any
-			purpose.
-			<br><br>
-			Any reliance you place on the information provided on this website is strictly at your own risk. I disclaim
-			any liability for any loss or damage, including but not limited to indirect or consequential loss or damage,
-			arising from the use of this website or any information, products, services, or related graphics contained
-			on the website.
-			<br><br>
-			Through this website, you may be able to link to other websites that are not under my control. I have no
-			control over the nature, content, and availability of those sites. The inclusion of any links does not
-			necessarily imply a recommendation or endorse the views expressed within them.
-			<br><br>
-			Every effort is made to keep the website up and running smoothly. However, I take no responsibility for, and
-			will not be liable for, the website being temporarily unavailable due to technical issues beyond my control.
-			<br><br>
-			The content, layout, and design of this website are subject to change without notice. All images, logos,
-			trademarks, and other intellectual property used on this website are the property of their respective
-			owners.
-			<br><br>
-			By accessing and using this website, you agree to the terms of this disclaimer. If you do not agree with any
-			part of this disclaimer, please do not use this website.
-		</p>
-	</div>
-
-
-	<script>
-		window.onload = function () {
-			alert("This website is best viewed on a desktop.");
-		};
-
-		// When the user clicks on <div>, open the popup
-		function myFunction() {
-			var popup = document.getElementById("myPopup");
-			popup.classList.toggle("show");
-		}
-
-		// Get the login link element
-		const loginLink = document.getElementById("myBtn");
-
-		// Add an event listener to redirect to another page when the link is clicked
-		loginLink.addEventListener("click", function () {
-			// Call your JavaScript function or redirect to your desired URL
-			yourFunctionName();
-		});
-
-		// Your existing modal code here
-		var modal = document.getElementById("myModal");
-		var span = document.getElementsByClassName("close")[0];
-		span.onclick = function () {
-			modal.style.display = "none";
-		}
-		window.onclick = function (event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-
-		// Function to handle login/signup logic
-		function yourFunctionName() {
-			// Add your login/signup logic here
-			// For example, you can display a login form in the modal
-			modal.style.display = "block";
-		}
-	</script>
+    <header>
+        <h1 class="playwrite-co-regular">Task Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <label for="mode-switch">Dark Mode</label>
+                    <input type="checkbox" id="mode-switch" >
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="task-form">
+            <h2>Add New Task</h2>
+            <form id="new-task-form">
+                <label for="title">Title:</label>
+                <input type="text" class="input" placeholder="Title here" id="title" name="title" required>
+                
+                <label for="description">Description:</label>
+                <textarea id="description" class="input" placeholder="Description of your task here" name="description" required></textarea>
+                
+                <label for="due-date">Due Date:</label>
+                <input type="date" class="input" placeholder="Due date" id="due-date" name="due-date" required>
+                
+                <label for="priority">Priority:</label>
+                <select id="priority" class="input" placeholder="Title here" name="priority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+        <section id="task-list">
+            <h2>Task List</h2>
+            <div id="filters">
+                <button onclick="filterTasks('all')">All</button>
+                <button onclick="filterTasks('completed')">Completed</button>
+                <button onclick="filterTasks('pending')">Pending</button>
+                <button onclick="filterTasks('low')">Low Priority</button>
+                <button onclick="filterTasks('medium')">Medium Priority</button>
+                <button onclick="filterTasks('high')">High Priority</button>
+            </div>
+            <ul id="tasks"></ul>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
 </body>
-
 </html>
