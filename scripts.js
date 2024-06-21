@@ -83,7 +83,7 @@ function displayTasks(filter = 'all') {
 
         if (task.priority == 'low') {
         taskItem.innerHTML = `
-            <h3>${task.title} &ensp; <img src="icons/bulat.svg" style="vertical-align:middle"></h3>
+            <h3>${task.title}<img src="icons/bulat.svg" style="vertical-align:middle"></h3>
             <p>${task.description}</p>
             <p>Due: ${task.dueDate}</p>
             <p>Priority: ${task.priority}</p>
@@ -200,3 +200,25 @@ function checkStoredName() {
 
 // Check for stored name on page load
 window.onload = checkStoredName
+
+document.addEventListener('DOMContentLoaded', function() {
+    const fontSelect = document.getElementById('font-select');
+    
+    // Load saved font preference
+    const savedFont = localStorage.getItem('preferredFont');
+    if (savedFont) {
+        document.body.classList.add(`font-${savedFont}`);
+        fontSelect.value = savedFont;
+    }
+    
+    // Listen for font selection changes
+    fontSelect.addEventListener('change', function() {
+        // Remove existing font class
+        document.body.className = document.body.className.replace(/font-\S+/g, '');
+        // Add new font class
+        const selectedFont = fontSelect.value.toLowerCase().replace(' ', '-');
+        document.body.classList.add(`font-${selectedFont}`);
+        // Save font preference
+        localStorage.setItem('preferredFont', selectedFont);
+    });
+});

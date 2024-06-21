@@ -177,6 +177,12 @@ ul#tasks li.completed button {
     text-decoration: none;
 }
 
+body.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+body.font-arial { font-family: Arial, sans-serif; }
+body.font-georgia { font-family: Georgia, serif; }
+body.font-verdana { font-family: Verdana, sans-serif; }
+
+
 /* Light Mode */
 :root {
     --background-color: #f4f4f4;
