@@ -150,3 +150,25 @@ function loadModeFromStorage() {
         document.getElementById('mode-switch').checked = true;
     }
 }
+
+// Function to handle the prompt and store the person's name
+function getName() {
+    let person = prompt("Please enter your name", "Task Manager");
+    if (person != null) {
+        localStorage.setItem('personName', person); // Store the name in localStorage
+        document.getElementById("showName").innerHTML =
+        person;
+    }
+  }
+
+// Function to check if a name is already stored and display it
+function checkStoredName() {
+    let storedName = localStorage.getItem('personName');
+    if (storedName != null) {
+      document.getElementById("showName").innerHTML =
+      storedName;
+    }
+  }
+
+// Check for stored name on page load
+window.onload = checkStoredName

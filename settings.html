@@ -8,21 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="icons/menu.svg" alt="Menu">
         </div>
-        <a class="title" href="index.html">Task Manager</a>
+        <a class="title" href="index.html" id="showName">Task Manager</a>
         <div class="menu-links">
             <a href="index.html"> Home</a>
-            <a href="tasks.html"> Tasks</a>
             <a href="settings.html"> Settings</a>
             <a href="about.html"> About</a>
             <a><section id="mode-switch-section">
-                <label for="mode-switch">Dark Mode:</label>
+                <label for="mode-switch">Dark Mode</label>
                 <input type="checkbox" id="mode-switch">
             </section></a>
         </div>
@@ -30,9 +28,14 @@
     <br>
     <br>
     <main>
-        <!--Insertcodehere-->
+        <section id="task-list">
+            <h2>Settings</h2>
+            <div id="filters">
+                <p>Change the name of the app</p>
+                <button onclick="getName()">Change name</button>
+            </div>
     </main>
     <script src="scripts.js"></script>
-    <script src="about.js"></script>
+    <script src="scripts2.js"></script>
 </body>
 </html>
