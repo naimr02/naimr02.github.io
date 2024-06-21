@@ -80,8 +80,10 @@ function displayTasks(filter = 'all') {
         if (task.completed) {
             taskItem.classList.add('completed');
         }
+
+        if (task.priority == 'low') {
         taskItem.innerHTML = `
-            <h3>${task.title}</h3>
+            <h3>${task.title}   <img src="icons/bulat.svg" style="vertical-align:middle"></h3>
             <p>${task.description}</p>
             <p>Due: ${task.dueDate}</p>
             <p>Priority: ${task.priority}</p>
@@ -89,8 +91,34 @@ function displayTasks(filter = 'all') {
             <button onclick="editTask(${task.id})">Edit</button>
             <button onclick="deleteTask(${task.id})">Delete</button>
         `;
-        taskList.appendChild(taskItem);
+        taskList.appendChild(taskItem);}
+
+        if (task.priority == 'medium') {
+            taskItem.innerHTML = `
+                <h3>${task.title}   <img src="icons/petak.svg" style="vertical-align:middle"></h3>
+                <p>${task.description}</p>
+                <p>Due: ${task.dueDate}</p>
+                <p>Priority: ${task.priority}</p>
+                <button onclick="toggleComplete(${task.id})">${task.completed ? 'Mark as Pending' : 'Mark as Completed'}</button>
+                <button onclick="editTask(${task.id})">Edit</button>
+                <button onclick="deleteTask(${task.id})">Delete</button>
+            `;
+            taskList.appendChild(taskItem);}
+
+            if (task.priority == 'high') {
+                taskItem.innerHTML = `
+                    <h3>${task.title}   <img src="icons/segitiga.svg" style="vertical-align:middle"></h3>
+                    <p>${task.description}</p>
+                    <p>Due: ${task.dueDate}</p>
+                    <p>Priority: ${task.priority}</p>
+                    <button onclick="toggleComplete(${task.id})">${task.completed ? 'Mark as Pending' : 'Mark as Completed'}</button>
+                    <button onclick="editTask(${task.id})">Edit</button>
+                    <button onclick="deleteTask(${task.id})">Delete</button>
+                `;
+                taskList.appendChild(taskItem);}
     });
+
+    
 }
 
 function toggleComplete(id) {
