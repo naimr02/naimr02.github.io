@@ -23,7 +23,7 @@
                 <li><a href="about.html">About</a></li>
                 <li>
                     <label for="mode-switch">Dark Mode</label>
-                    <input type="checkbox" id="mode-switch" >
+                    <input type="checkbox" id="mode-switch">
                 </li>
             </ul>
         </nav>
@@ -57,9 +57,9 @@
                 <button onclick="filterTasks('all')">All</button>
                 <button onclick="filterTasks('completed')">Completed</button>
                 <button onclick="filterTasks('pending')">Pending</button>
-                <button onclick="filterTasks('low')">Low Priority</button>
-                <button onclick="filterTasks('medium')">Medium Priority</button>
-                <button onclick="filterTasks('high')">High Priority</button>
+                <button onclick="filterTasks('low')" style="background-color: rgb(124, 179, 66);">Low Priority</button>
+                <button onclick="filterTasks('medium')" style="background-color: rgb(255, 214, 0);">Medium Priority</button>
+                <button onclick="filterTasks('high')" style="background-color: rgb(244, 81, 30);">High Priority</button>
             </div>
             <ul id="tasks"></ul>
         </section>
