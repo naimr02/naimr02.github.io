@@ -5,49 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Add the following link element to import the Google Fonts stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 class="playwrite-co-regular">Task Manager</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="icons/menu.svg" alt="Menu">
+        </div>
+        <a class="title">Task Manager</a>
+        <div class="menu-links">
+            <a href="index.html"> Home</a>
+            <a href="tasks.html"> Tasks</a>
+            <a href="settings.html"> Settings</a>
+            <a href="about.html"> About</a>
+            <a></section>
+                <!-- Adding the dark mode switch -->
+                <section id="mode-switch-section">
                     <label for="mode-switch">Dark Mode</label>
                     <input type="checkbox" id="mode-switch">
-                </li>
-            </ul>
-        </nav>
-    </header>
+                </section></a>
+        </div>
+    </div>
+    <br>
+    <br>
     <main>
         <section id="task-form">
             <h2>Add New Task</h2>
             <form id="new-task-form">
                 <label for="title">Title:</label>
                 <input type="text" class="input" placeholder="Title here" id="title" name="title" required>
-                
                 <label for="description">Description:</label>
                 <textarea id="description" class="input" placeholder="Description of your task here" name="description" required></textarea>
-                
                 <label for="due-date">Due Date:</label>
-                <input type="date" class="input" placeholder="Due date" id="due-date" name="due-date" required>
-                
+                <input type="date" class="input" id="due-date" name="due-date" required>
                 <label for="priority">Priority:</label>
-                <select id="priority" class="input" placeholder="Title here" name="priority" required>
+                <select id="priority" class="input" name="priority" required>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                
                 <button type="submit">Add Task</button>
             </form>
         </section>
@@ -62,7 +61,6 @@
                 <button onclick="filterTasks('high')" style="background-color: rgb(244, 81, 30);">High Priority</button>
             </div>
             <ul id="tasks"></ul>
-        </section>
     </main>
     <script src="scripts.js"></script>
 </body>

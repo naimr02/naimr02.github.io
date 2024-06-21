@@ -1,3 +1,4 @@
+/* General Styles */
 .plus-jakarta-sans {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
@@ -9,7 +10,6 @@
     font-optical-sizing: auto;
     font-weight: 400;
 }
-  
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -20,30 +20,66 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    background-color: var(--header-background);
-    color: var(--header-text);
-    padding: 10px 0;
-    text-align: center;
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-background);
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 
-header h1 {
-    margin: 0;
+.navbar .menu-icon {
+    color: var(--navbar-text);
+    padding: 14px 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: var(--header-text);
+.navbar a.title {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: bold;
     text-decoration: none;
+    color: var(--navbar-text);
+    padding: 14px 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--navbar-hover-background);
+}
+
+/* Menu Links */
+.menu-links {
+    position: fixed;
+    top: 60px; /* Height of the navbar */
+    left: -250px; /* Hide the menu by default */
+    height: calc(100% - 60px); /* Full height (minus the navbar height) */
+    width: 250px;
+    background-color: var(--menu-links-background);
+    transition: left 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-links.show {
+    left: 0; /* Slide in from the left when 'show' class is added */
+}
+
+.menu-links a {
+    color: var(--menu-links-text);
+    text-decoration: none;
+    padding: 12px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-links a:hover {
+    background-color: var(--menu-links-hover-background);
 }
 
 main {
@@ -60,12 +96,12 @@ main {
     border-radius: 10px;
     transition: all 0.5s;
 }
-  
+
 .input:hover, .input:focus {
     border: 2px solid #4A9DEC;
-    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
     background-color: white;
-} 
+}
 
 #task-form, #task-list {
     background: var(--element-background);
@@ -151,6 +187,12 @@ ul#tasks li.completed button {
     --input-border: #ccc;
     --button-background: #333;
     --button-text: #fff;
+    --navbar-background: #fff;
+    --navbar-text: #333;
+    --navbar-hover-background: #808080;
+    --menu-links-background: #fff;
+    --menu-links-text: #333;
+    --menu-links-hover-background: #f1f1f1;
 }
 
 /* Dark Mode */
@@ -165,4 +207,10 @@ body.dark-mode {
     --input-border: #666;
     --button-background: #555;
     --button-text: #fff;
+    --navbar-background: #444;
+    --navbar-text: #fff;
+    --navbar-hover-background: #555;
+    --menu-links-background: #555;
+    --menu-links-text: #fff;
+    --menu-links-hover-background: #666;
 }
