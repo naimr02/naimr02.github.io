@@ -83,7 +83,7 @@ function displayTasks(filter = 'all') {
 
         if (task.priority == 'low') {
         taskItem.innerHTML = `
-            <h3>${task.title}   <img src="icons/bulat.svg" style="vertical-align:middle"></h3>
+            <h3>${task.title} &ensp; <img src="icons/bulat.svg" style="vertical-align:middle"></h3>
             <p>${task.description}</p>
             <p>Due: ${task.dueDate}</p>
             <p>Priority: ${task.priority}</p>

@@ -5,10 +5,12 @@
     font-weight: 400; /* Adjust the weight as needed */
 }
 
-.playwrite-co-regular {
-    font-family: "Playwrite CO", cursive;
-    font-optical-sizing: auto;
-    font-weight: 100;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 body {

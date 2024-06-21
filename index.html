@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -12,19 +13,18 @@
 <body>
     <div class="navbar">
         <div class="menu-icon" onclick="toggleMenu()">
-            <img src="icons/menu.svg" alt="Menu">
+            <span class="material-symbols-outlined" style="vertical-align: middle;">menu</span>
         </div>
         <a id="showName" class="title">Task Manager</a>
         <div class="menu-links">
-            <a href="index.html"> Home</a>
-            <a href="settings.html"> Settings</a>
-            <a href="about.html"> About</a>
-            <a></section>
-                <!-- Adding the dark mode switch -->
-                <section id="mode-switch-section">
-                    <label for="mode-switch">Dark Mode</label>
-                    <input type="checkbox" id="mode-switch">
-                </section></a>
+            <a href="index.html" ><span class="material-symbols-outlined" style="vertical-align: middle;">keep</span>&emsp; Home</a>
+            <a href="settings.html"><span class="material-symbols-outlined" style="vertical-align: middle;">display_settings</span>&emsp; Settings</a>
+            <a href="about.html"><span class="material-symbols-outlined" style="vertical-align: sub;">info</span>&emsp; About</a>
+            <br>
+            <a><section id="mode-switch-section">
+                <label for="mode-switch">Dark Mode</label>
+                <input type="checkbox" id="mode-switch">
+            </section></a>
         </div>
     </div>
     <br>
@@ -54,9 +54,9 @@
                 <button onclick="filterTasks('all')">All</button>
                 <button onclick="filterTasks('completed')">Completed</button>
                 <button onclick="filterTasks('pending')">Pending</button>
-                <button onclick="filterTasks('low')" >Low Priority   <img src="icons/bulat.svg" style="vertical-align:middle"> </button>
-                <button onclick="filterTasks('medium')" >Medium Priority   <img src="icons/petak.svg" style="vertical-align:middle"></button>
-                <button onclick="filterTasks('high')" >High Priority   <img src="icons/segitiga.svg" style="vertical-align:middle"></button>
+                <button onclick="filterTasks('low')" >Low Priority &ensp;<img src="icons/bulat.svg" style="vertical-align:middle"> </button>
+                <button onclick="filterTasks('medium')" >Medium Priority &ensp;<img src="icons/petak.svg" style="vertical-align:middle"></button>
+                <button onclick="filterTasks('high')" >High Priority &ensp;<img src="icons/segitiga.svg" style="vertical-align:middle"></button>
             </div>
             <ul id="tasks"></ul>
     </main>
