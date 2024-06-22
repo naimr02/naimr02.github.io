@@ -22,6 +22,19 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+a {
+    color: var(--button-text);
+    text-decoration: none;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 /* Navbar */
 .navbar {
     background-color: var(--navbar-background);
