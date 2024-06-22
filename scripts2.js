@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const modeSwitch = document.getElementById('mode-switch');
     modeSwitch.addEventListener('change', toggleMode);
     loadModeFromStorage();
+
+    const savedFontClass = localStorage.getItem('selectedFont') || 'font-jakarta';
+    const fontSelect = document.getElementById('font-select');
+    document.body.classList.add(savedFontClass);
+
+    // Set the font-select value based on the class name
+    const savedFont = savedFontClass.replace('font-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    fontSelect.value = savedFont;
 });
 
 function toggleMenu() {
@@ -41,3 +49,11 @@ function loadModeFromStorage() {
         document.getElementById('mode-switch').checked = true;
     }
 }
+
+document.getElementById('font-select').addEventListener('change', function () {
+    const selectedFont = this.value;
+    const fontClass = 'font-' + selectedFont.toLowerCase().replace(/\s+/g, '-');
+    document.body.classList.remove(...document.body.classList);
+    document.body.classList.add(fontClass);
+    localStorage.setItem('selectedFont', fontClass);
+});

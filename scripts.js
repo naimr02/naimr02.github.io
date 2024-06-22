@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadTasksFromStorage();
     displayTasks();
+
+    const savedFontClass = localStorage.getItem('selectedFont') || 'font-jakarta';
+    const fontSelect = document.getElementById('font-select');
+    document.body.classList.add(savedFontClass);
+
+    // Set the font-select value based on the class name
+    const savedFont = savedFontClass.replace('font-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    fontSelect.value = savedFont;
 });
 
 function toggleMenu() {
@@ -201,24 +209,10 @@ function checkStoredName() {
 // Check for stored name on page load
 window.onload = checkStoredName
 
-document.addEventListener('DOMContentLoaded', function() {
-    const fontSelect = document.getElementById('font-select');
-    
-    // Load saved font preference
-    const savedFont = localStorage.getItem('preferredFont');
-    if (savedFont) {
-        document.body.classList.add(`font-${savedFont}`);
-        fontSelect.value = savedFont;
-    }
-    
-    // Listen for font selection changes
-    fontSelect.addEventListener('change', function() {
-        // Remove existing font class
-        document.body.className = document.body.className.replace(/font-\S+/g, '');
-        // Add new font class
-        const selectedFont = fontSelect.value.toLowerCase().replace(' ', '-');
-        document.body.classList.add(`font-${selectedFont}`);
-        // Save font preference
-        localStorage.setItem('preferredFont', selectedFont);
-    });
+document.getElementById('font-select').addEventListener('change', function () {
+    const selectedFont = this.value;
+    const fontClass = 'font-' + selectedFont.toLowerCase().replace(/\s+/g, '-');
+    document.body.classList.remove(...document.body.classList);
+    document.body.classList.add(fontClass);
+    localStorage.setItem('selectedFont', fontClass);
 });
