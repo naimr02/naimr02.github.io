@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#summary" class="nav-link">Summary</a>
+				<a href="#stack" class="nav-link">My Stack</a>
+				<a href="#work" class="nav-link">My Work</a>
+                <a href="#contact" class="nav-link">Contact me</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="material-icons" id="theme-icon">dark_mode</span>
+            </button>
+        </div>
+    </header>
+    
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-image">
+                <img src="media/hero.jpeg" alt="Profile Image" class="profile-img">
+            </div>
+            <div class="hero-text">
+                <h1 class="name-heading">I'm <span class="name-highlight">NAIM BIN ABDUL RAHMAN</span></h1>
+                <p class="subtitle">🚀 Computer Science Student</p>
+				<br>
+				<p class="subtitle">🌠 Seeking internship for <span class="highlight">Software Development</span>, <span class="highlight">UI/UX Development</span>, and <span class="highlight">Cybersecurity</span>.</p>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="hero-reverse" id="summary">
+            <div class="hero-text">
+			<h1 class="name-heading">⚡ Who <span class="name-highlight">am I?</span></h1>
+                <p class="summary-text">
+                    A final-year computer science student specializing in Android application UI/UX design, 
+                    with foundational expertise in cybersecurity, object-oriented programming, 
+                    and version control systems like Git. Possesses a <span class="highlight">strong work ethic</span> complemented 
+                    by well-developed <span class="highlight">interpersonal skills</span>. Demonstrates <span class="highlight">creativity</span>, 
+                    <span class="highlight">adaptability</span>, and <span class="highlight">effective communication</span> abilities.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="media/summary.jpeg" alt="Professional Image" class="profile-img">
+            </div>
+        </section>
+		
+		<!-- My Stack Section -->
+		<section class="stack-section" id="stack">
+			<h2 class="section-title">Technical Stack</h2>
+			<div class="stack-grid">
+				<div class="stack-category">
+					<h3 class="category-title">Frontend</h3>
+					<div class="skill-item">HTML5 <i class="devicon-html5-plain"></i></div>
+					<div class="skill-item">CSS3 <i class="devicon-css3-plain"></i></div>
+					<div class="skill-item">JavaScript <i class="devicon-javascript-plain"></i></div>
+					<div class="skill-item">Kotlin <i class="devicon-kotlin-plain"></i></div>
+					<div class="skill-item">Bootstrap <i class="devicon-bootstrap-plain"></i></div>
+					<div class="skill-item">Flutter <i class="devicon-flutter-plain"></i></div>
+				</div>
+				
+				<div class="stack-category">
+					<h3 class="category-title">Backend</h3>
+					<div class="skill-item">Java <i class="devicon-java-plain"></i></div>
+					<div class="skill-item">C++ <i class="devicon-cplusplus-plain"></i></div>
+					<div class="skill-item">Laravel <i class="devicon-laravel-plain"></i></div>
+					<div class="skill-item">PHP <i class="devicon-php-plain"></i></div>
+				</div>
+				
+				<div class="stack-category">
+					<h3 class="category-title">Database</h3>
+					<div class="skill-item">SQLite <i class="devicon-sqlite-plain"></i></div>
+					<div class="skill-item">MongoDB <i class="devicon-mongodb-plain"></i></div>
+				</div>
+				
+				<div class="stack-category">
+					<h3 class="category-title">Tools</h3>
+					<div class="skill-item">Git <i class="devicon-git-plain"></i></div>
+					<div class="skill-item">Android Studio <i class="devicon-androidstudio-plain"></i></div>
+					<div class="skill-item">Firebase <i class="devicon-firebase-plain"></i></div>
+					<div class="skill-item">Figma <i class="devicon-figma-plain"></i></div>
+					<div class="skill-item">Adobe Suites <i class="devicon-photoshop-plain"></i></div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- My Work Section -->
+		<section class="work-section" id="work">
+			<h2 class="section-title">University Projects</h2>
+			<div class="projects-grid">
+				<!-- RehabMy Project -->
+				<article class="project-card">
+					<div class="project-image">
+						<img src="media/rehabmy.jpeg" alt="Physiotherapy app interface">
+					</div>
+					<div class="project-content">
+						<h3>RehabMy</h3>
+						<p>Android physiotherapy exercise tracker with Firebase integration and role-based access control.</p>
+						<a href="https://github.com/naimr02/RehabMy-test" class="project-link">View Project</a>
+					</div>
+				</article>
+
+				<!-- Task Manager Project -->
+				<article class="project-card">
+					<div class="project-image">
+						<img src="media/taskmanager.jpeg" alt="Task manager interface">
+					</div>
+					<div class="project-content">
+						<h3>Task Manager</h3>
+						<p>Material Design inspired web app with local storage persistence and dark/light themes.</p>
+						<a href="https://naimr02.github.io/task_manager/" class="project-link">View Project</a>
+					</div>
+				</article>
+
+				<!-- NoMeritGo Project -->
+				<article class="project-card">
+					<div class="project-image">
+						<img src="media/nomeritgo.jpeg" alt="Campus app interface">
+					</div>
+					<div class="project-content">
+						<h3>NoMeritGo</h3>
+						<p>College event finder with Google Maps integration and Firebase authentication.</p>
+						<a href="https://github.com/naimr02/NoMeritGo" class="project-link">View Project</a>
+					</div>
+				</article>
+			</div>
+		</section>
+		
+		<!-- Contact Section -->
+		<section class="contact-section" id="contact">
+			<h2 class="section-title">Keep In Touch.</h2>
+			<div class="contact-buttons">
+				<a href="https://www.linkedin.com/in/naim-abdul-rahman/" class="contact-btn" target="_blank" rel="noopener">
+					<span class="material-icons">person</span>
+					LinkedIn
+				</a>
+				<a href="mailto:naimrahman2602@gmail.com" class="contact-btn" target="_blank" rel="noopener">
+					<span class="material-icons">email</span>
+					Email
+				</a>
+				<a href="docs/CV_Naim.pdf" class="contact-btn" target="_blank" rel="noopener">
+					<span class="material-icons">description</span>
+					Resume
+				</a>
+			</div>
+		</section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

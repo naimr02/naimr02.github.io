@@ -1,0 +1,521 @@
+/* ========================
+   CSS STRUCTURE INDEX
+   ========================
+   1. Theme Variables
+   2. Base Styles
+   3. Layout - Navigation
+   4. Layout - Hero Sections
+   5. Components
+   6. Responsive Styles
+   7. Dark Mode Overrides
+   8. Smooth Scroll Behavior
+   ======================== */
+
+/* 1. Theme Variables */
+:root {
+    --primary-color: #2196F3;
+    --primary-light: #6ec6ff;
+    --primary-dark: #0069c0;
+    --text-on-light: #333333;
+    --text-on-dark: #ffffff;
+    --background-light: #f5f5f5;
+    --background-dark: #121212;
+    --navbar-light-bg: rgba(255, 255, 255, 0.7);
+    --navbar-dark-bg: rgba(18, 18, 18, 0.7);
+}
+
+/* 2. Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-on-light);
+    transition: background-color 0.3s, color 0.3s;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+}
+
+.hero, .hero-reverse, .education-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+/* 3. Layout - Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: var(--navbar-light-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-on-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* 4. Layout - Hero Sections */
+.content {
+    margin-top: 80px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 2rem;
+}
+
+.hero-reverse {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 2rem;
+    flex-direction: row;
+	
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+/* My Work Section */
+.work-section {
+    padding: 80px 20px;
+    min-height: 100vh;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--navbar-light-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+body.dark-mode .project-card {
+    background: var(--navbar-dark-bg);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.project-content p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-link {
+    align-self: flex-start;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.project-link:hover {
+    border-color: var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+
+/* 5. Components */
+.name-heading {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.name-highlight {
+    color: var(--primary-color);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.summary-text {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+.highlight {
+    background: var(--primary-color);
+    color: var(--text-on-dark);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* 6. Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .hero-reverse {
+        flex-direction: column;
+        text-align: left;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        max-width: 100%;
+        order: -1;
+    }
+    
+    .profile-img {
+        max-height: 50vh;
+        border-radius: 16px;
+    }
+    
+    .name-heading {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .summary-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        max-height: 40vh;
+    }
+    
+    .name-heading {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .summary-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        flex-direction: row;
+        min-height: auto;
+        gap: 1rem;
+    }
+    
+    .profile-img {
+        max-height: 60vh;
+    }
+    
+    .name-heading {
+        font-size: 1.8rem;
+    }
+}
+
+/* 7. Dark Mode Overrides */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-on-dark);
+}
+
+body.dark-mode .navbar {
+    background: var(--navbar-dark-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-toggle {
+    color: var(--text-on-dark);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 8. Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-on-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-on-dark);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text, .hero-image, .timeline-item {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.hero-image { animation-delay: 0.2s; }
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+/* Stack Section */
+.stack-section {
+    padding: 80px 20px;
+    min-height: 100vh;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stack-category {
+    background: var(--navbar-light-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+body.dark-mode .stack-category {
+    background: var(--navbar-dark-bg);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: rgba(var(--primary-dark), 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(10px);
+}
+
+.devicon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .stack-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-btn {
+    background: var(--navbar-light-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-on-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out both;
+    opacity: 0;
+}
+
+.contact-btn:nth-child(1) { animation-delay: 0.2s; }
+.contact-btn:nth-child(2) { animation-delay: 0.4s; }
+.contact-btn:nth-child(3) { animation-delay: 0.6s; }
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(var(--primary-dark), 0.1);
+}
+
+body.dark-mode .contact-btn {
+    background: var(--navbar-dark-bg);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-on-dark);
+}
+
+@media (max-width: 768px) {
+    .contact-buttons { flex-direction: column; width: 100%; }
+    .contact-btn { width: 100%; justify-content: center; }
+}
