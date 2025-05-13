@@ -11,19 +11,33 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="navbar-content">
-            <div class="navbar-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#summary" class="nav-link">Summary</a>
+		<div class="navbar-content">
+			<div class="navbar-links" id="navbar-links">
+				<a href="#home" class="nav-link">Home</a>
+				<a href="#summary" class="nav-link">Summary</a>
 				<a href="#stack" class="nav-link">My Stack</a>
 				<a href="#work" class="nav-link">My Work</a>
-                <a href="#contact" class="nav-link">Contact me</a>
-            </div>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <span class="material-icons" id="theme-icon">dark_mode</span>
-            </button>
-        </div>
-    </header>
+				<a href="#contact" class="nav-link">Contact me</a>
+			</div>
+			<div class="navbar-controls">
+				<button 
+				  class="hamburger-menu"
+				  id="hamburger-menu"
+				  aria-label="Mobile navigation toggle"
+				  aria-controls="navbar-links"
+				  aria-expanded="false"
+				>
+				  <span class="bar" aria-hidden="true"></span>
+				  <span class="bar" aria-hidden="true"></span>
+				  <span class="bar" aria-hidden="true"></span>
+				</button>
+				<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+					<span class="material-icons" id="theme-icon">dark_mode</span>
+				</button>
+			</div>
+		</div>
+	</header>
+	<!--<div class="overlay" id="overlay"></div>-->
     
     <main class="content">
         <!-- Hero Section -->
