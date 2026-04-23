@@ -21,23 +21,6 @@ export const metadata: Metadata = {
   description: 'Frontend developer transitioning from WordPress to modern JavaScript frameworks. Building scalable, performant web applications with React and Next.js.',
   keywords: ['Frontend Developer', 'React', 'Next.js', 'WordPress', 'Web Developer', 'JavaScript'],
   authors: [{ name: 'Naim Rahman' }],
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {

@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Garden City Learning Center",
     description:
-      "Developed a full-scale educational platform during my internship. Custom-coded CSS and JS to ensure the Squarespace UI is cun and mobile-responsive.",
+      "Developed a full-scale educational platform during my internship. Custom-coded CSS and JS to ensure the Squarespace UI is pleasant to navigate and mobile-responsive.",
     tech: ["Squarespace", "Custom CSS", "JavaScript"],
     liveUrl: "https://gardencitylearningcenter.org",
     image: "/projects/gclc.png",
