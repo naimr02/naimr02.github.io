@@ -34,7 +34,7 @@ export function HeroSection() {
 
             {/* Description */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              I’m a Computer Science grad and UI/UX focused developer. Whether it's WordPress, custom JS, or Android apps, I make sure everything is <i className="italic text-foreground">ngam</i> and high-performance. Let's <i className="italic text-foreground">kasi jadi</i> your next project!
+              I&apos;m a Computer Science grad and UI/UX focused developer. Whether it&apos;s WordPress, custom JS, or Android apps, I make sure everything is <em className="italic text-foreground">ngam</em> and high-performance. Let&apos;s <em className="italic text-foreground">kasi jadi</em> your next project!
             </p>
 
             {/* CTA Buttons */}

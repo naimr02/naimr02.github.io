@@ -29,7 +29,7 @@ export function ExperienceSection() {
                   </p>
                 </div>
                 <span className="text-sm text-muted-foreground font-mono">
-                  Sept 2025 — Dec 2026
+                  Sept 2025 — Dec 2025
                 </span>
               </div>
 
@@ -58,7 +58,7 @@ export function ExperienceSection() {
                     <li className="flex items-start gap-4">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                       <span className="text-foreground/90">
-                        Performed weekly maintenance for a diverse client portfolio to ensure cun performance and top-tier security.
+                        Performed weekly maintenance for a diverse client portfolio to ensure consistent performance and top-tier security.
                       </span>
                     </li>
                   </ul>

@@ -1,24 +1,4 @@
-const skills = [
-  { name: "HTML/CSS", category: "web" },
-  { name: "JavaScript", category: "web" },
-  { name: "Kotlin", category: "mobile" },
-  { name: "Jetpack Compose", category: "mobile" },
-  { name: "WordPress", category: "cms" },
-  { name: "Squarespace", category: "cms" },
-  { name: "LearnDash", category: "cms" },
-  { name: "Git/GitHub", category: "tools" },
-  { name: "Firebase", category: "tools" },
-  { name: "Google Maps SDK", category: "tools" },
-  { name: "Figma", category: "tools" },
-  { name: "SEO Optimization", category: "tools" },
-];
-
-const categories = {
-  web: "Web & Core Tech",
-  mobile: "Mobile & Frontend",
-  cms: "CMS & Platforms",
-  tools: "Tools & Services",
-};
+import { skills, skillCategories } from '@/data/skills';
 
 export function SkillsSection() {
   const groupedSkills = skills.reduce(
@@ -44,7 +24,7 @@ export function SkillsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {Object.entries(categories).map(([key, label]) => (
+          {Object.entries(skillCategories).map(([key, label]) => (
             <div key={key} className="space-y-4">
               <h3 className="text-sm font-medium text-primary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-[#CFBDFF] dark:via-[#E0CCFF] dark:to-[#CFBDFF]">{label}</h3>
               <div className="flex flex-wrap gap-2">

@@ -1,35 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "Garden City Learning Center",
-    description:
-      "Developed a full-scale educational platform during my internship. Custom-coded CSS and JS to ensure the Squarespace UI is pleasant to navigate and mobile-responsive.",
-    tech: ["Squarespace", "Custom CSS", "JavaScript"],
-    liveUrl: "https://gardencitylearningcenter.org",
-    image: "/projects/gclc.png",
-  },
-  {
-    title: "RehabMy (Physio Tracker)",
-    description:
-      "A Kotlin/Jetpack Compose app for lower limb rehabilitation. Real-time updates via Firebase so recovery progress is always steady.",
-    tech: ["Kotlin", "Jetpack Compose", "Firebase"],
-    liveUrl: "",
-    githubUrl: "https://github.com/naimr02/RehabMy",
-    image: "/projects/rehabmy.jpeg",
-  },
-  {
-    title: "NoMeritGo (Event Finder)",
-    description:
-      "Integrated Google Maps SDK to help students find merit events nearby. Secure login via OAuth2 ensures student data is safe.",
-    tech: ["Android Studio", "Google Maps SDK", "Firebase"],
-    liveUrl: "",
-    githubUrl: "https://github.com/naimr02/NoMeritGo",
-    image: "/projects/nomeritgo.jpeg",
-  },
-];
+import { projects } from "@/data/projects";
 
 export function ProjectsSection() {
   return (
@@ -46,7 +18,7 @@ export function ProjectsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <article
-              key={index}
+              key={project.id}
               className={`group overflow-hidden h-full flex flex-col bg-card shadow-[var(--shadow-elevation-1)] transition-all duration-300 hover:shadow-[var(--shadow-elevation-3)] hover:-translate-y-2 rounded-[28px] ${
                 projects.length === 3 && index === 2
                   ? "md:col-span-2 md:w-[calc(50%-12px)] md:mx-auto lg:col-span-1 lg:w-auto lg:mx-0"
